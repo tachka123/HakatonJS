@@ -45,6 +45,7 @@ html {
 }
 
 .input {
+  background-color: black;
   border: 3px solid var(--main_color);
   border-radius: 10px;
   height: 52px;
@@ -60,8 +61,8 @@ html {
   color: red;
 }
 
-.input_name {
-}
+/* .input_name {
+} */
 
 .btn {
   margin-top: 38px;
@@ -90,6 +91,7 @@ html {
   width: 195px;
   display: block;
   color: var(--main_color);
+  padding-bottom: 210px;
 }
 
 .underBtn a::after {
