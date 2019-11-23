@@ -1,0 +1,44 @@
+body{
+    background-color: var(--black);
+}
+
+.addPhoto_logo {
+  width: 40px;
+  padding-top: 26px;
+  margin: 0 auto;
+}
+
+.addPhoto_title {
+  padding-top: 44px;
+  text-align: center;
+  color: var(--main_color);
+}
+
+.addPhoto_cover {
+  width: 475px;
+  min-height: 200px;
+  margin: 70px auto 0;
+  background-color: var(--main_color);
+  border: 1px solid var(--main_color);
+  border-radius: 12px;
+}
+
+.addPhoto_text{
+    text-align: center;
+}
+
+.addPhoto_add-photo{
+  padding-top: 20px;
+    width: 110px;
+    margin: 0 auto;
+}
+
+.addPhoto_add-photo svg{
+  border: 1px solid var(--main_color);
+  border-radius: 12px;
+}
+
+#hide.is-hidden{
+    display: none;
+}
+
