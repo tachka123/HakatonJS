@@ -95,7 +95,8 @@ const massOfPeople = [
 const matchesPeople = document.querySelector('.matchesPeople');
 
 function generatePeople(){
-  return massOfPeople.reduce((acc,element) => acc += template(element), '');
+  return massOfPeople.reduce((acc,element) => {
+    return acc += template(element)}, '');
 }
 
 function insertPeople(){
