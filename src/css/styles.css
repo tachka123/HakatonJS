@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'quickSand';
+  src: url('../font/quickSandBold.ttf');
+}
+:root {
+  --white: #ffffff;
+  --black: #1b1b1b;
+  --main_color: #b9995b;
+  --font: 'Quicksand', sans-serif;
+  --fonSizeLabel: 18px;
+  --fontSizeInput: 24px;
+}
+
+html {
+  box-sizing: border-box;
+}
+​ *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+​ img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+​ a {
+  display: block;
+}
+​ ul {
+  list-style: none;
+}
+
+.container {
+  width: 475px;
+  margin: 0 auto;
+  font-family: quickSand;
+}
+
+.outer_input {
+  display: flex;
+  flex-direction: column;
+  height: 121px;
+  justify-content: space-between;
+}
+
+.input {
+  border: 3px solid var(--main_color);
+  border-radius: 10px;
+  height: 52px;
+  font-size: var(--fontSizeInput);
+  color: var(--main_color);
+  font-family: var(--font);
+  padding-left: 20px;
+}
+.input_name {
+  color: var(--main_color);
+}
+.input_error {
+  color: red;
+}
+
+.input_name {
+}
+
+.btn {
+  margin-top: 38px;
+  width: 100%;
+  height: 69px;
+  background-color: var(--main_color);
+  border: none;
+  border-radius: 15px;
+  font-family: var(--font);
+  color: black;
+  font-size: var(--fontSizeInput);
+  cursor: pointer;
+  margin-bottom: 31px;
+}
+
+.underBtn {
+  width: 100%;
+  display: block;
+  text-align: right;
+}
+
+.underBtn a {
+  margin-left: auto;
+  text-decoration: none;
+  position: relative;
+  width: 195px;
+  display: block;
+  color: var(--main_color);
+}
+
+.underBtn a::after {
+  margin-top: 8px;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: var(--main_color);
+}
