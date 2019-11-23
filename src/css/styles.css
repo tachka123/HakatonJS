@@ -11,6 +11,10 @@
   --fontSizeInput: 24px;
 }
 
+body {
+  background-color: #1b1b1b;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -52,17 +56,38 @@ html {
   color: var(--main_color);
   font-family: var(--font);
   padding-left: 20px;
+  outline: none;
 }
 .input_name {
   color: var(--main_color);
 }
+
 .input_error {
+  width: 100%;
   color: red;
+  opacity: 0;
+}
+/* number error */
+.number__error-block {
+  width: 100%;
+  display: block;
+  position: relative;
 }
 
-.input_name {
+.input_error_number {
+  color: red;
+  opacity: 0;
+  position: relative;
 }
 
+.input_error_length {
+  color: red;
+  opacity: 0;
+  position: absolute;
+  top: -22;
+  left: 0;
+}
+/* end number error */
 .btn {
   margin-top: 38px;
   width: 100%;
@@ -75,28 +100,122 @@ html {
   font-size: var(--fontSizeInput);
   cursor: pointer;
   margin-bottom: 31px;
+  outline: none;
 }
 
-.underBtn {
+.registration__underBtn {
   width: 100%;
   display: block;
   text-align: right;
 }
 
-.underBtn a {
+.registration__underBtn a {
   margin-left: auto;
   text-decoration: none;
   position: relative;
-  width: 195px;
+  width: 128px;
   display: block;
   color: var(--main_color);
 }
 
-.underBtn a::after {
+.registration__underBtn a::after {
   margin-top: 8px;
   display: block;
   content: '';
   width: 100%;
   height: 3px;
   background-color: var(--main_color);
+}
+
+#image {
+  display: block;
+  margin: 50px auto 71px;
+}
+
+.registration__tittle {
+  color: #b9995b;
+  text-align: center;
+  font-size: 48px;
+}
+
+.registration__form {
+  margin-bottom: 50px;
+}
+
+.registration_subtitle {
+  color: #b9995b;
+  text-align: left;
+  font-size: 18px;
+}
+
+.registration__outer-input {
+  height: 90px;
+}
+
+.input::placeholder {
+  color: var(--main_color);
+  font-size: 18px;
+}
+
+.input_sex {
+  opacity: 1;
+  outline: none;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.registration__sex__label {
+  position: relative;
+  cursor: pointer;
+}
+
+.registration__sex__label::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(0%, -50%);
+  display: block;
+  border: 2px solid var(--main_color);
+  border-radius: 50px;
+  width: 21px;
+  height: 21px;
+}
+
+.registration__sex__label.checked::after {
+  opacity: 1;
+}
+
+.registration__sex__label::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(0%, -50%);
+  display: block;
+  border: 2px solid var(--main_color);
+  border-radius: 50px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--main_color);
+  opacity: 0;
+}
+
+.registration__sex-title {
+  color: var(--main_color);
+  padding-left: 30px;
+}
+
+/* стили для js */
+
+.invalid {
+  border: 3px solid red;
+}
+
+.error {
+  opacity: 1;
+}
+
+.qs-datepicker-container {
+  width: 475px;
 }
