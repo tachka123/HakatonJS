@@ -1,0 +1,11 @@
+.dropzone {
+  background-color: var(--main_color);
+}
+
+.dropzone .dz-preview.dz-image-preview {
+  background-color: var(--main_color);
+}
+
+.dropzone .dz-preview{
+    margin: 11px;
+}

@@ -257,7 +257,12 @@ export default function() {
         gender: sex,
       })
       .then(result => {
+        const {data} = result;
+        localStorage.setItem('token',data.token)
         PNotify.success("Registered!")
+        setTimeout(() => {
+          window.location.replace("/add-photo.html")
+        }, 1000);
       })
       .catch(error => {
         PNotify.error("This nickname also made! Try another one.")
