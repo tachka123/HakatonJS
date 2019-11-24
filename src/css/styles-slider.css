@@ -146,8 +146,8 @@ body {
   height: 100%;
 }
 
-.mapFooter {
-  height: 40px;
+.mapFooter1 {
+  height: 23px;
   width: 100%;
   background-color: #1b1b1b;
   color: var(--main_color);
@@ -161,6 +161,6 @@ body {
   z-index: 10;
 }
 
-.mapFooter span {
-  margin-right: 50px;
+.mapFooter1 span {
+  margin-right: 100px;
 }
