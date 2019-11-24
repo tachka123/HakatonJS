@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'quickSand';
+  src: url('../font/quickSandBold.ttf');
+}
+:root {
+  --white: #ffffff;
+  --black: #1b1b1b;
+  --main_color: #b9995b;
+  --font: 'Quicksand', sans-serif;
+  --fonSizeLabel: 18px;
+  --fontSizeInput: 24px;
+}
+
+.imgDivLogin {
+  padding-top: 170px;
+  padding-bottom: 56px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.titleLogin {
+  text-align: center;
+  font-size: 48px;
+  font-family: var(--font);
+  color: var(--main_color);
+}
+
+.input {
+  background-color: var(--black);
+}
+
+.input_invalid {
+  border: 2px solid red;
+}
+
+.input_valid {
+  border: 2px solid var(--main_color);
+}
+
+.input.input_invalid + span {
+  color: red;
+  opacity: 1;
+}
+
+.input_error {
+  font-size: 16px;
+  font-family: var(--font);
+  opacity: 0;
+  transition: 0.4s opacity;
+}

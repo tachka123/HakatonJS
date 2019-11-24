@@ -25,6 +25,10 @@ html {
 *::after {
   box-sizing: border-box;
 }
+
+body {
+  background: var(--black);
+}
 ​ img {
   display: block;
   max-width: 100%;
@@ -51,6 +55,7 @@ html {
 }
 
 .input {
+  background-color: black;
   border: 3px solid var(--main_color);
   border-radius: 10px;
   height: 52px;
@@ -77,11 +82,13 @@ html {
   position: relative;
 }
 
+
 .input_error_number {
   color: red;
   opacity: 0;
   position: relative;
 }
+
 
 .input_error_length {
   color: red;
@@ -119,6 +126,7 @@ html {
   width: 128px;
   display: block;
   color: var(--main_color);
+  padding-bottom: 210px;
 }
 
 .registration__underBtn a::after {
