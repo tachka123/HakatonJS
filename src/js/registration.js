@@ -1,11 +1,17 @@
 import datepicker from 'js-datepicker';
 import axios from 'axios';
 import 'js-datepicker/dist/datepicker.min.css';
+import PNotify from 'pnotify/dist/es/PNotify.js';
+
+import 'pnotify/dist/PNotifyBrightTheme.css';
 export default function() {
   // login
   const login = document.querySelector('.input__login');
   const loginError = document.querySelector('.input_login_error');
-
+  let geoArray = [];
+  const sexArray = Array.from(
+    document.querySelectorAll('.registration__sex__label'),
+  );
   login.addEventListener('blur', e => {
     if (login.value.length) {
       return;
@@ -49,7 +55,7 @@ export default function() {
   //sex
   const radioButtonGendre = document.querySelectorAll('.input_sex');
   let activeRadioButton;
-
+  let sex = '';
   Array.from(radioButtonGendre).forEach(radio => {
     radio.addEventListener('change', e => {
       if (!activeRadioButton) {
@@ -57,6 +63,15 @@ export default function() {
       } else {
         activeRadioButton.parentNode.classList.remove('checked');
       }
+      setTimeout(() => {
+        if (sexArray[0].classList.contains('checked')) {
+          sex = 'male';
+          console.log(sex);
+        } else {
+          sex = 'female';
+          console.log(sex);
+        }
+      }, 100);
 
       activeRadioButton = e.target;
       activeRadioButton.parentNode.classList.add('checked');
@@ -69,7 +84,6 @@ export default function() {
       input.value = date.toDateString();
     },
     nSelect: instance => {
-      // Show which date was selected.
       console.log(instance.dateSelected);
     },
     onShow: instance => {
@@ -79,7 +93,6 @@ export default function() {
       console.log('Calendar hidden.');
     },
     onMonthChange: instance => {
-      // Show the month of the selected date.
       console.log(instance.currentMonthName);
     },
     position: 'bl',
@@ -164,15 +177,110 @@ export default function() {
     }
   });
   /// submit
-  const btn = document.querySelector('.btn'); 
+  const btn = document.querySelector('.btn');
+  const form = document.querySelector('.registration__form');
+  btn.addEventListener('click', handleClick);
 
-  form.addEventListener('submit', submit);
-
-  function submit() {
-    if (login.value.length === 2) {
-      console.log('hello');
+  async function handleClick(e) {
+    e.preventDefault();
+    const loginValid = isValidLoginInput();
+    const nameValid = isValidNameInput();
+    const phoneNumberValid = isValidPhoneNumberInput();
+    const passwordValid = isValidPasswordInput();
+    if (loginValid && nameValid && phoneNumberValid && passwordValid) {
+      const resultRequest = await sendRequestAxios();
+      if (resultRequest) {
+        PNotify.success(`Succesfully registered! Please log in! :)`);
+      } else {
+        PNotify.error('Something went wrong. Try again!');
+      }
     } else {
-      console.log('lox');
+      PNotify.error('Invalid inputs. Try again!');
     }
   }
+
+  function isValidLoginInput() {
+    if (login.value.length) {
+      login.classList.remove('invalid');
+      loginError.classList.remove('error');
+      return true;
+    } else {
+      login.classList.add('invalid');
+      loginError.classList.add('error');
+      return false;
+    }
+  }
+
+  function isValidNameInput() {
+    if (name.value.length) {
+      name.classList.remove('invalid');
+      nameError.classList.remove('error');
+      return true;
+    } else {
+      name.classList.add('invalid');
+      nameError.classList.add('error');
+      return false;
+    }
+  }
+
+  function isValidPhoneNumberInput() {
+    if (phoneNumber.value.length === 10) {
+      phoneNumber.classList.remove('invalid');
+      phoneNumberError.classList.remove('error');
+      phoneNumberErrorLength.classList.remove('error');
+      return true;
+    } else if (phoneNumber.value.length === 0) {
+      phoneNumber.classList.add('invalid');
+      phoneNumberError.classList.add('error');
+      return false;
+    } else if (phoneNumber.value.length < 10 || phoneNumber.value.length > 10) {
+      phoneNumber.classList.add('invalid');
+      phoneNumberErrorLength.classList.add('error');
+      return false;
+    }
+  }
+
+  function isValidPasswordInput() {
+    if (password.value.length >= 8) {
+      password.classList.remove('invalid');
+      passwordError.classList.remove('error');
+      return true;
+    } else {
+      password.classList.add('invalid');
+      passwordError.classList.add('error');
+      return false;
+    }
+  }
+
+  async function sendRequestAxios() {
+    const res = await axios
+      .post('https://venify.herokuapp.com/user/register', {
+        password: password.value,
+        login: login.value,
+        age: getAge(),
+        phone_number: phoneNumber.value,
+        geo_location: geoArray,
+        gender: sex,
+      })
+      .then(result => true)
+      .catch(error => false);
+    console.log(res);
+    return res;
+  }
+
+  function getAge() {
+    const age = document.querySelector('.input__age');
+    const arr = age.value.split(' ');
+    return 2019 - arr[arr.length - 1];
+  }
+  function getGeo(geo) {
+    geoArray = geo;
+  }
+
+  function getLocation() {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      getGeo([position.coords.latitude, position.coords.longitude]);
+    });
+  }
+  getLocation();
 }

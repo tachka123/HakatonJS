@@ -57,6 +57,7 @@ html {
   font-family: var(--font);
   padding-left: 20px;
   outline: none;
+  background-color: var(--black);
 }
 .input_name {
   color: var(--main_color);
@@ -218,4 +219,10 @@ html {
 
 .qs-datepicker-container {
   width: 475px;
+}
+
+.ui-pnotify-container {
+  background-color: white;
+  border-radius: 15px;
+  color: red;
 }
