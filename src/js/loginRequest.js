@@ -26,7 +26,9 @@ export default function() {
         password: refs.passwordValid.value,
         login: refs.inputValid.value,
       })
-      .then(res => localStorage.setItem('token', res.data.token))
+      .then(res => {
+        localStorage.setItem('token', res.data.token)
+      })
       .catch(err => {
         catchError();
       })
