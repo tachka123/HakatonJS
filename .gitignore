@@ -2,7 +2,7 @@
 .idea
 # production
 /build
-
+.vscode
 # Logs
 logs
 *.log
