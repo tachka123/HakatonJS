@@ -19,6 +19,7 @@ html {
 *::after {
   box-sizing: border-box;
 }
+/*
 ​ img {
   display: block;
   max-width: 100%;
@@ -99,4 +100,68 @@ html {
   width: 100%;
   height: 3px;
   background-color: var(--main_color);
+} */
+
+/* .swiper-container {
+  padding: 130px 0;
+} */
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.scroll_btn {
+  border-radius: 20px;
+  border-color: var(--main_color);
+  font-size: 36px;
+  width: 218px;
+  height: 72px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.scroll_btn:hover {
+  background-color: var(--main_color);
+}
+.scroll-btns {
+  margin: 56px auto;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 750px;
+  right: 36%;
+  z-index: 12;
+}
+
+.swiper-buttons {
+  color: #ffffff;
+  position: absolute;
+  left: 5%;
+  /* top: 40%; */
+}
+.swiper-slide1 {
+  width: 100%;
+  height: 100%;
+  /* position: relative; */
+}
+.swiper-container.swiper-container1 {
+  position: relative;
+}
+.swiper-container.swiper-container2 {
+  width: 672px;
+  height: 672px;
+  background-color: #b9995b;
+  position: absolute;
+  z-index: 5;
+  top: 50px;
+  right: 30%;
+}
+
+.user-photo1 {
+  width: 100%;
+  height: 100vh;
+}
+.user-photo {
+  width: 100%;
+  height: 100%;
 }
