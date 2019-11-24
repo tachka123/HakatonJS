@@ -347,13 +347,14 @@ header .header_container{
   opacity: 1;
 }
 
-.qs-datepicker-container {
-  width: 475px;
-}
 
 .ui-pnotify-container {
   background-color: white;
   border-radius: 15px;
   color: red;
 
+}
+
+.qs-datepicker-container{
+  width: 100% !important;
 }
