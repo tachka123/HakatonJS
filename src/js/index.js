@@ -27,7 +27,11 @@ const swiper1 = new Swiper('.swiper-container1', {
   //   speed: 5000,
   //   delay: 2000,
 });
-
+const button = document.querySelector('.scroll_btn_next');
+button.addEventListener('click', () => {
+  swiper1.slideNext();
+  swiper.slideNext();
+});
 swiper.controller.control = swiper1;
 // swiper1.controller.control = swiper;
 
@@ -41,8 +45,8 @@ const getListByName = async () => {
         'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9udW1iZXIiOiJ1c2VyVGVsLnZhbHVlIiwiYWdlIjoidXNlckFnZS52YWx1ZSIsImlhdCI6MTU3NDUyNDMyMH0.CJcAiSm1lbnAwTOipBt-0KJI8ZPREWdRwRotDraRnoVYCPi3DVNhwXhhZDag36iV0cds7K5GnGheoCGf4sPLzQ',
     },
   });
-  console.log(data);
   return await data;
+  
 };
 
 const createList = photoList => {
@@ -62,6 +66,4 @@ const renderList = async () => {
   ul1.innerHTML = createList1(data);
 };
 
-// const button = document.querySelector('.scroll_btn_next');
-// button.addEventListener('click', () => {});
 renderList();
