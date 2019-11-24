@@ -28,6 +28,7 @@ export default function() {
       })
       .then(res => {
         localStorage.setItem('token', res.data.token)
+        window.location.replace("/add-photo.html")
       })
       .catch(err => {
         catchError();
