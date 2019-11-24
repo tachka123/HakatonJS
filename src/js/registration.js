@@ -188,12 +188,7 @@ export default function() {
     const phoneNumberValid = isValidPhoneNumberInput();
     const passwordValid = isValidPasswordInput();
     if (loginValid && nameValid && phoneNumberValid && passwordValid) {
-      const resultRequest = await sendRequestAxios();
-      if (resultRequest) {
-        PNotify.success(`Succesfully registered! Please log in! :)`);
-      } else {
-        PNotify.error('Something went wrong. Try again!');
-      }
+      sendRequestAxios();
     } else {
       PNotify.error('Invalid inputs. Try again!');
     }
@@ -253,19 +248,20 @@ export default function() {
   }
 
   async function sendRequestAxios() {
-    const res = await axios
-      .post('https://venify.herokuapp.com/user/register', {
+    await axios.post('https://venify.herokuapp.com/user/register', {
         password: password.value,
         login: login.value,
-        age: getAge(),
+        age: 18,
         phone_number: phoneNumber.value,
         geo_location: geoArray,
         gender: sex,
       })
-      .then(result => true)
-      .catch(error => false);
-    console.log(res);
-    return res;
+      .then(result => {
+        PNotify.success("Registered!")
+      })
+      .catch(error => {
+        PNotify.error("This nickname also made! Try another one.")
+      });
   }
 
   function getAge() {
@@ -283,4 +279,6 @@ export default function() {
     });
   }
   getLocation();
+
+
 }
