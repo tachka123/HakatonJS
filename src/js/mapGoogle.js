@@ -65,11 +65,11 @@ export default function() {
 
   const exit = document.querySelector('#EXIT');
   exit.addEventListener('click', () => {
-    window.location.replace('/login.html');
+    window.location.replace('/HakatonProduction/login.html');
     localStorage.removeItem('token');
   });
   toLikes.addEventListener('click', () => {
-    window.location.replace('/slider.html');
+    window.location.replace('/HakatonProduction/slider.html');
   });
   if(document.querySelector('.personAge')){
     document.querySelector('.personAge').textContent = ''

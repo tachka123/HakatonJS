@@ -28,7 +28,7 @@ export default function() {
       })
       .then(res => {
         localStorage.setItem('token', res.data.token)
-        window.location.replace("/add-photo.html")
+        window.location.replace("/HakatonProduction/add-photo.html")
       })
       .catch(err => {
         catchError();

@@ -90,13 +90,13 @@ export default function() {
 
     const exit = document.querySelector('#exit')
     exit.addEventListener('click',() => {
-      window.location.replace("/login.html")
+      window.location.replace("HakatonProduction/login.html")
       localStorage.removeItem("token")
     })
 
     const toMap = document.querySelector('#toMap')
     toMap.addEventListener('click', () => {
-      window.location.replace("/map.html")
+      window.location.replace("/HakatonProduction/map.html")
     })
 	}
 }

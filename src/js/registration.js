@@ -261,7 +261,7 @@ export default function() {
         localStorage.setItem('token',data.token)
         PNotify.success("Registered!")
         setTimeout(() => {
-          window.location.replace("/add-photo.html")
+          window.location.replace("/HakatonProduction/add-photo.html")
         }, 1000);
       })
       .catch(error => {

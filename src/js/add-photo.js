@@ -22,7 +22,7 @@ const myDropzone = new Dropzone(dropBoxCover, {
 
 myDropzone.on('complete', function(file) {
   if (this.files.length === 2) {
-    window.location.replace("/slider.html")
+    window.location.replace("/HakatonProduction/slider.html")
   }
 });
 
