@@ -26,9 +26,9 @@
   color: var(--main_color);
 }
 
-/* .input {
-  background-color: black;
-} */
+.input {
+  background-color: var(--black);
+}
 
 .input_invalid {
   border: 2px solid red;

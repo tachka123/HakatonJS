@@ -7,7 +7,7 @@ export default function() {
   refs.passwordValid.addEventListener('input', validateInputPassword);
 
   function validateInputLogin() {
-    if (!refs.inputValid.value.length || refs.inputValid.value.length <= 5) {
+    if (refs.inputValid.value.length >= 5) {
       refs.inputValid.classList.remove('input_invalid');
     } else {
       refs.inputValid.classList.add('input_invalid');
