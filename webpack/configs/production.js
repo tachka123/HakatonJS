@@ -9,7 +9,7 @@ const htmlPlugins = generateHtmlPlugins(`${paths.SRC_DIR}/html/views`);
 module.exports = env => ({
   devtool: 'source-map',
   output: {
-    filename: '[name].[contenthash].js',
+    filename: './HakatonJS/build/[name].[contenthash].js',
   },
   optimization: {
     moduleIds: 'hashed',
