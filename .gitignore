@@ -1,7 +1,6 @@
 # wscode
 .idea
-# production
-/build
+
 .vscode
 # Logs
 logs
