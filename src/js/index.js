@@ -1,4 +1,4 @@
-import '../css/styles.css';
+import '../css/styles-slider.css';
 import Swiper from 'swiper';
 import 'swiper/css/swiper.min.css';
 import galleryItem from '../html/template/galleryItem.hbs';
@@ -31,6 +31,13 @@ const button = document.querySelector('.scroll_btn_next');
 button.addEventListener('click', () => {
   swiper1.slideNext();
   swiper.slideNext();
+  like.style.opacity = '0';
+});
+const button1 = document.querySelector('.scroll_btn_like');
+const like = document.querySelector('.picturelike');
+
+button1.addEventListener('click', () => {
+  like.style.opacity = '1';
 });
 swiper.controller.control = swiper1;
 // swiper1.controller.control = swiper;
@@ -46,7 +53,6 @@ const getListByName = async () => {
     },
   });
   return await data;
-  
 };
 
 const createList = photoList => {
@@ -64,6 +70,9 @@ const renderList = async () => {
   const data = await getListByName();
   ul.innerHTML = createList(data);
   ul1.innerHTML = createList1(data);
+
+  swiper1.update();
+  swiper.update();
 };
 
 renderList();

@@ -126,6 +126,18 @@ header .header_container {
   justify-content: space-between;
   width: 156px;
 }
+.picturelike {
+  position: absolute;
+  z-index: 12;
+  top: 42%;
+  right: 890px;
+  opacity: 0;
+  transition: 0.5s linear;
+}
+/* .picturelike:hover {
+  opacity: 1;
+  transition: 1s linear;
+} */
 
 body {
   position: relative;
@@ -209,7 +221,7 @@ body {
   justify-content: flex-end;
   align-items: center;
   position: absolute;
-  top: 900px;
+  top: 100%;
   z-index: 10;
 }
 
