@@ -1,3 +1,4 @@
+'use strict';
 import datepicker from 'js-datepicker';
 import axios from 'axios';
 import 'js-datepicker/dist/datepicker.min.css';
@@ -6,7 +7,7 @@ import PNotify from 'pnotify/dist/es/PNotify.js';
 import 'pnotify/dist/PNotifyBrightTheme.css';
 export default function() {
   // login
-  const login = document.querySelector('.input__login');
+  const login = document.querySelector('.input__login-registration');
   const loginError = document.querySelector('.input_login_error');
   let geoArray = [];
   const sexArray = Array.from(
@@ -31,7 +32,7 @@ export default function() {
   });
 
   //name
-  const name = document.querySelector('.input__name');
+  const name = document.querySelector('.input__name-registration');
   const nameError = document.querySelector('.input_name_error');
 
   name.addEventListener('blur', e => {
@@ -156,7 +157,7 @@ export default function() {
   });
 
   // password
-  const password = document.querySelector('.input__password');
+  const password = document.querySelector('.input__password-registration');
   const passwordError = document.querySelector('.input_password_error');
 
   password.addEventListener('blur', e => {
@@ -248,7 +249,8 @@ export default function() {
   }
 
   async function sendRequestAxios() {
-    await axios.post('https://venify.herokuapp.com/user/register', {
+    await axios
+      .post('https://venify.herokuapp.com/user/register', {
         password: password.value,
         login: login.value,
         age: 18,
@@ -257,15 +259,15 @@ export default function() {
         gender: sex,
       })
       .then(result => {
-        const {data} = result;
-        localStorage.setItem('token',data.token)
-        PNotify.success("Registered!")
+        const { data } = result;
+        localStorage.setItem('token', data.token);
+        PNotify.success('Registered!');
         setTimeout(() => {
-          window.location.replace("/HakatonProduction/add-photo.html")
+          window.location.replace('/HakatonProduction/add-photo.html');
         }, 1000);
       })
       .catch(error => {
-        PNotify.error("This nickname also made! Try another one.")
+        PNotify.error('This nickname also made! Try another one.');
       });
   }
 
@@ -284,6 +286,4 @@ export default function() {
     });
   }
   getLocation();
-
-
 }

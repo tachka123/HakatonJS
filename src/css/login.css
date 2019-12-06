@@ -18,8 +18,8 @@
   justify-content: center;
   margin: 0 auto;
 }
-.underBtn a{
-  padding-bottom: 0;
+.underBtn a {
+  padding-bottom: 50px;
 }
 .titleLogin {
   text-align: center;
@@ -52,7 +52,7 @@
   transition: 0.4s opacity;
 }
 
-a{
+a {
   margin-left: auto;
   text-decoration: none;
   position: relative;
@@ -62,11 +62,11 @@ a{
   padding-bottom: 210px;
 }
 
-a::after{
+a::after {
   margin-top: 8px;
-    display: block;
-    content: '';
-    width: 100%;
-    height: 3px;
-    background-color: var(--main_color);
+  display: block;
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: var(--main_color);
 }

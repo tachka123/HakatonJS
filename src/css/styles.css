@@ -11,10 +11,9 @@
   --fontSizeInput: 24px;
 }
 
-
 body {
   background-color: #1b1b1b;
-margin: 0;
+  margin: 0;
 }
 
 html {
@@ -82,16 +81,15 @@ body {
   position: relative;
 }
 
-
 .input_error_number {
   color: red;
   opacity: 0;
   position: relative;
 }
-svg{
+svg {
   cursor: pointer;
 }
-img{
+img {
   object-fit: cover;
 }
 .input_error_length {
@@ -130,7 +128,7 @@ img{
   width: 128px;
   display: block;
   color: var(--main_color);
-  padding-bottom: 210px;
+  padding-bottom: 50px;
 }
 
 .registration__underBtn a::after {
@@ -142,15 +140,14 @@ img{
   background-color: var(--main_color);
 }
 
-
-header{
+header {
   width: 100%;
   height: 70px;
   background-color: #171717;
   margin: 0;
 }
 
-header .header_container{
+header .header_container {
   padding: 0 50px;
   display: flex;
   justify-content: space-between;
@@ -158,22 +155,22 @@ header .header_container{
   align-items: center;
 }
 
-.header_right{
+.header_right {
   display: flex;
   justify-content: space-between;
   width: 156px;
 }
 
-.mapBody{
-  height:85vh;
+.mapBody {
+  height: 85vh;
   width: 100%;
   background-color: grey;
   position: relative;
 }
-.mapFooter{
+.mapFooter {
   height: 37px;
   width: 100%;
-  background-color: #1B1B1B;
+  background-color: #1b1b1b;
   color: var(--main_color);
   font-family: var(--font);
   font-size: 14px;
@@ -182,16 +179,16 @@ header .header_container{
   align-items: center;
 }
 
-.mapFooter span{
+.mapFooter span {
   margin-right: 50px;
 }
 
-.mapMatches{
+.mapMatches {
   display: flex;
   flex-direction: column;
   width: 320px;
   height: 75vh;
-  background-color: #1B1B1B;
+  background-color: #1b1b1b;
   opacity: 0.9;
   position: absolute;
   top: 40px;
@@ -200,7 +197,7 @@ header .header_container{
   justify-content: space-between;
 }
 
-.spanMatches{
+.spanMatches {
   display: block;
   margin: 51px auto 30px;
   color: var(--main_color);
@@ -208,7 +205,7 @@ header .header_container{
   font-size: var(--fonSizeLabel);
 }
 
-.matchesPeople{
+.matchesPeople {
   display: flex;
   flex-direction: column;
   height: 683px;
@@ -216,7 +213,7 @@ header .header_container{
   overflow: auto;
 }
 
-.matchesPersonOuter{
+.matchesPersonOuter {
   transition: all 0.7s;
   width: 100%;
   opacity: 0.6;
@@ -225,7 +222,7 @@ header .header_container{
   display: flex;
 }
 
-.matchesPersonInner{
+.matchesPersonInner {
   font-family: var(--main_color);
   color: var(--main_color);
   width: 220px;
@@ -234,41 +231,58 @@ header .header_container{
   display: flex;
 }
 
-.matchesPersonInner span{
+.matchesPersonInner span {
   font-family: var(--font);
 }
 
-.matchesPersonInner img{
+.matchesPersonInner img {
   width: 48px;
   height: 58px;
   margin-right: 24px;
 }
-.personInfo{
+.personInfo {
   display: flex;
   flex-direction: column;
 }
 
-.mapCanvas{
+.mapCanvas {
   width: 100%;
   height: 100%;
 }
 
-.matchesPersonOuter:hover{
+.matchesPersonOuter:hover {
   background-color: rgba(185, 153, 91, 0.4);
   cursor: pointer;
 }
 
-.matchesPeople::-webkit-scrollbar { width: 3px; height: 3px;}
-.matchesPeople::-webkit-scrollbar-button {  background-color: inherit; }
-.matchesPeople::-webkit-scrollbar-track {  background-color: #999;}
-.matchesPeople::-webkit-scrollbar-track-piece { background-color: #ffffff;}
-.matchesPeople::-webkit-scrollbar-thumb { height: 50px; background-color: var(--main_color); border-radius: 3px;}
-.matchesPeople::-webkit-scrollbar-corner { background-color: #999;}
-.matchesPeople::-webkit-resizer { background-color: #666;}
+.matchesPeople::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+.matchesPeople::-webkit-scrollbar-button {
+  background-color: inherit;
+}
+.matchesPeople::-webkit-scrollbar-track {
+  background-color: #999;
+}
+.matchesPeople::-webkit-scrollbar-track-piece {
+  background-color: #ffffff;
+}
+.matchesPeople::-webkit-scrollbar-thumb {
+  height: 50px;
+  background-color: var(--main_color);
+  border-radius: 3px;
+}
+.matchesPeople::-webkit-scrollbar-corner {
+  background-color: #999;
+}
+.matchesPeople::-webkit-resizer {
+  background-color: #666;
+}
 
-.Body{
+.Body {
   height: 100vh;
-  overflow:  hidden;
+  overflow: hidden;
 }
 
 #image {
@@ -360,14 +374,12 @@ header .header_container{
   opacity: 1;
 }
 
-
 .ui-pnotify-container {
   background-color: white;
   border-radius: 15px;
   color: red;
-
 }
 
-.qs-datepicker-container{
+.qs-datepicker-container {
   width: 100% !important;
 }
