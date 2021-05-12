@@ -56,6 +56,6 @@
     "handlebars": "^4.5.3",
     "js-datepicker": "^5.2.1",
     "pnotify": "^4.0.0",
-    "swiper": "^5.2.0"
+    "swiper": "^6.5.1"
   }
 }
